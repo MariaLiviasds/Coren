@@ -3,48 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicação web do COREN-PE para login e cadastro de profissionais.">
+    <meta name="keywords" content="COREN-PE, login, cadastro, enfermagem, Pernambuco">
+    <meta name="author" content="Lívia">
     <title>Coren-PE - Bem-vindo</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .welcome-container {
-            text-align: center;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .welcome-container h1 {
-            color: #003366;
-            font-weight: bold;
-        }
-        .welcome-container a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #005F6A;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .welcome-container a:hover {
-            background-color: #007ef4;
-        }
-    </style>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/img/icons/icon-192x192.png" type="image/png">
 </head>
 <body>
-    <div class="welcome-container">
-        <h1>Bem-vindo ao COREN-PE</h1>
-        <a href="/login.html">Fazer Login</a>
-        <a href="/cadastro.html">Cadastrar-se</a>
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100 login-section">
+        <img src="/img/Coren.png" alt="Coren-PE" class="mb-3 logo" width="150" height="150">
+        <h1 class="text-center mb-3" style="color: #003366;">Bem-vindo ao COREN-PE</h1>
+        <a href="/login.html" class="btn btn-primary btn-lg mb-2 w-75" aria-label="Ir para a página de login">Fazer Login</a>
+        <a href="/cadastro.html" class="btn btn-outline-primary btn-lg w-75" aria-label="Ir para a página de cadastro">Cadastrar-se</a>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('Service Worker registrado'))
+                .catch(error => console.error('Erro ao registrar Service Worker:', error));
+        }
+    </script>
 </body>
 </html>
