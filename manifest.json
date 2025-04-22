@@ -1,0 +1,21 @@
+{
+    "name": "COREN-PE",
+    "short_name": "COREN-PE",
+    "description": "Aplicação web para login e cadastro do COREN-PE",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#f8f9fa",
+    "theme_color": "#005F6A",
+    "icons": [
+        {
+            "src": "/img/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
