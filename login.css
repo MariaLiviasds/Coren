@@ -1,117 +1,69 @@
-body {
-  background-color: #f8f9fa;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+body{
+  background-color:#f8f9fa;
+  font-family:Arial,sans-serif;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center
 }
 
-.container-fluid {
-  padding: 5px;
+.container-fluid{
+  padding:5px
 }
 
-.login-section {
-  background-color: #f8f9fa;
-  padding: 10px 0;
+.login-section{
+  background-color:#f8f9fa;
+  padding:10px 0
 }
 
-.login-section h2 {
-  color: #003366;
-  font-weight: bold;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+.login-section h2{
+  color:#002b4d;
+  font-weight:700;
+  font-size:1.8rem;
+  margin-bottom:10px
+}
+  
+.banner-servicos{
+  background-image:url(/img/servicos.webp);
+  background-size:cover;
+  background-position:center;
+  height:200px;
+  display:flex;
+  justify-content:center;align-items:center;text-align:center;aspect-ratio:4/1
 }
 
-.banner-servicos {
-  background-image: url('/img/servicos.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.banner-servicos h1{
+  font-size:2.5rem;font-weight:700;color:#002b4d;text-align:left
 }
 
-.banner-servicos h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #003366;
-  text-align: left;
+.banner-servicos p{
+  font-size:1.2rem;color:#002b4d;margin-top:8px;text-align:left
 }
 
-.banner-servicos p {
-  font-size: 1.2rem;
-  color: #003366;
-  margin-top: 8px;
-  text-align: left;
+.form-control{
+  border-radius:5px;border:1px solid #005F6A;font-size:1rem;margin-bottom:8px
 }
 
-.form-control {
-  border-radius: 5px;
-  border: 1px solid #005F6A;
-  font-size: 1rem;
-  margin-bottom: 8px;
+.btn-primary{
+  background-color:#004d57;border:none;font-weight:600;font-size:1.1rem;margin-bottom:8px
 }
 
-.btn-primary {
-  background-color: #005F6A;
-  border: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+.btn-primary:{
+  background-color:#007ef4
+}
+  
+.btn-outline-primary{
+  border-color:#004d57;color:#004d57;font-weight:600;font-size:1.1rem;margin-bottom:8px
 }
 
-.btn-primary:hover {
-  background-color: #007ef4;
+.btn-outline-primary:hover{
+  background-color:#007ef4;color:#fff
 }
 
-.btn-outline-primary {
-  border-color: #005F6A;
-  color: #005F6A;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+#mensagem{
+  text-align:center;font-weight:500;font-size:.9rem
 }
 
-.btn-outline-primary:hover {
-  background-color: #007ef4;
-  color: #fff;
-}
-
-#mensagem {
-  text-align: center;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.logo {
-  max-width: 150px;
-}
-
-@media (max-width: 576px) {
-  .banner-servicos {
-      height: 120px;
-  }
-  .banner-servicos h1 {
-      font-size: 1.8rem;
-  }
-  .banner-servicos p {
-      font-size: 0.9rem;
-  }
-  .login-section h2 {
-      font-size: 1.5rem;
-  }
-  .form-control, .btn {
-      font-size: 1rem;
-      padding: 10px;
-  }
-  .logo {
-      max-width: 120px;
-  }
-  .w-75 {
-      width: 100% !important;
-  }
-}
+  .logo{
+    max-width:150px}@media (max-width:576px){.banner-servicos{height:120px}.banner-servicos h1{font-size:1.8rem}.banner-servicos p{font-size:.9rem}.login-section h2{font-size:1.5rem}.form-control,.btn{font-size:1rem;padding:10px}.logo{max-width:120px}.w-75{width:100%!important}}
