@@ -1,0 +1,33 @@
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-fluid {
+  padding: 5px;
+}
+
+.login-section {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+.login-section h2 {
+  color: #002b4d;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.banner-servicos {
+  background-image: url(/img/servicos.webp);
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex
+}
