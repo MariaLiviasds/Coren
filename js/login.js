@@ -1,31 +1,20 @@
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-  
-    const n = document.getElementById("email").value.trim();
-    const t = document.getElementById("senha").value;
-    const a = document.getElementById("mensagem");
-  
-    a.innerHTML = "";
-  
-    if (!n.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-      a.innerHTML = '<div class="alert alert-danger">E-mail inválido.</div>';
-      return;
-    }
-  
-    if (t.length < 6) {
-      a.innerHTML = '<div class="alert alert-danger">Senha deve ter pelo menos 6 caracteres.</div>';
-      return;
-    }
-  
-    a.innerHTML = '<div class="alert alert-success">Login realizado com sucesso!</div>';
-  
-    const i = {
-      email: n,
-      senha: t
-    };
-  
-    console.log("Dados enviados:", i);
-  
-    document.getElementById("loginForm").reset();
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('login-form');
+  if (form) {
+      form.addEventListener('submit', (e) => {
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+          if (!email || !password) {
+              e.preventDefault();
+              alert('Preencha todos os campos!');
+          }
+      });
+  }
+
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/js/service-worker.js')
+          .then(reg => console.log('Service Worker registrado', reg))
+          .catch(err => console.error('Erro ao registrar Service Worker', err));
+  }
+});
   
