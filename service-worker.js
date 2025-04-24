@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coren-pe-cache-v1';
+const CACHE_NAME = 'coren-pe-cache-v3';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -11,25 +11,21 @@ const urlsToCache = [
     '/img/Coren.png',
     '/img/servicos.jpg',
     '/img/icons/icon-192x192.png',
-    '/img/icons/icon-512x512.png'
+    '/img/icons/icon-512x512.png',
+    '/manifest.json'
 ];
 
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('Cache aberto');
-                return cache.addAll(urlsToCache);
-            })
+            .then(cache => cache.addAll(urlsToCache))
     );
 });
 
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
-            .then(response => {
-                return response || fetch(event.request);
-            })
+            .then(response => response || fetch(event.request))
     );
 });
 
