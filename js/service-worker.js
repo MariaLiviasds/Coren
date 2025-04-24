@@ -1,23 +1,22 @@
-const CACHE_NAME = 'coren-pe-cache-v4';
+const CACHE_NAME = 'coren-pe-v6';
 const urlsToCache = [
     '/',
     '/index.html',
     '/login.html',
     '/cadastro.html',
-    '/login.css',
-    '/cadastro.css',
-    '/login.js',
-    '/cadastro.js',
+    '/css/styles.css',
+    '/css/login.css',
+    '/css/cadastro.css',
+    '/js/login.js',
+    '/js/cadastro.js',
     '/img/Coren.webp',
     '/img/servicos.webp',
     '/img/icons/icon-192x192.webp',
     '/img/icons/icon-512x512.webp',
+    '/img/icons/icon-192x192.png',
+    '/img/icons/icon-512x512.png',
     '/manifest.json',
-    '/sitemap.xml',
-    'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
-    'https://code.jquery.com/jquery-3.5.1.slim.min.js',
-    'https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js',
-    'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'
+    '/offline.html'
 ];
 
 self.addEventListener('install', event => {
@@ -30,21 +29,10 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
-            .then(response => response || fetch(event.request))
-    );
-});
-
-self.addEventListener('activate', event => {
-    const cacheWhitelist = [CACHE_NAME];
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (!cacheWhitelist.includes(cacheName)) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
+            .then(response => {
+                return response || fetch(event.request).catch(() => {
+                    return caches.match('/offline.html');
+                });
+            })
     );
 });
