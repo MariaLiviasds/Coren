@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coren-pe-cache-v3';
+const CACHE_NAME = 'coren-pe-cache-v4';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -8,11 +8,16 @@ const urlsToCache = [
     '/cadastro.css',
     '/login.js',
     '/cadastro.js',
-    '/img/Coren.png',
-    '/img/servicos.jpg',
-    '/img/icons/icon-192x192.png',
-    '/img/icons/icon-512x512.png',
-    '/manifest.json'
+    '/img/Coren.webp',
+    '/img/servicos.webp',
+    '/img/icons/icon-192x192.webp',
+    '/img/icons/icon-512x512.webp',
+    '/manifest.json',
+    '/sitemap.xml',
+    'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
+    'https://code.jquery.com/jquery-3.5.1.slim.min.js',
+    'https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js',
+    'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'
 ];
 
 self.addEventListener('install', event => {

@@ -1,0 +1,4 @@
+     User-agent: *
+     Allow: /
+     Sitemap: https://willowy-meringue-ff4fa4.netlify.app/sitemap.xml
+     ```
