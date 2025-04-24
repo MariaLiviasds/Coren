@@ -1,0 +1,9 @@
+body {
+    font-family: Arial, sans-serif;
+}
+header, footer {
+    background-color: #005F6A;
+}
+.text-white {
+    color: #FFFFFF !important;
+}
