@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coren-pe-v6';
+const CACHE_NAME = 'coren-pe-v9';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -9,6 +9,7 @@ const urlsToCache = [
     '/css/cadastro.css',
     '/js/login.js',
     '/js/cadastro.js',
+    '/js/sw-register.js',
     '/img/Coren.webp',
     '/img/servicos.webp',
     '/img/icons/icon-192x192.webp',
