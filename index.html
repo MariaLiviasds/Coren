@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#005F6A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.netlify.app; style-src 'self' https://stackpath.bootstrapcdn.com; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com; connect-src 'self';">
     <title>COREN-PE</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -25,19 +28,26 @@
     </main>
     <footer class="bg-dark text-white text-center py-3">
         <p>© 2025 COREN-PE. Todos os direitos reservados.</p>
-        <p><a href="mailto:contato@corenpe.org" style="color: #FFFFFF;">E-mail: contato@corenpe.org</a></p>
+        <p><a href="/cdn-cgi/l/email-protection#5b3834352f3a2f341b3834293e352b3e7534293c" style="color: #FFFFFF;">E-mail: <span class="__cf_email__" data-cfemail="d0b3bfbea4b1a4bf90b3bfa2b5bea0b5febfa2b7">[email&#160;protected]</span></a></p>
         <p><a href="tel:+558112345678" style="color: #FFFFFF;">Telefone: (81) 1234-5678</a></p>
         <p><a href="https://maps.google.com/?q=Recife,PE" style="color: #FFFFFF;">Endereço: Recife, PE</a></p>
+        <noscript>
+            <p class="text-center text-warning">Este site requer JavaScript e suporte a Service Workers para uma experiência completa. Considere usar um navegador moderno.</p>
+        </noscript>
     </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/js/service-worker.js')
-                .then(reg => console.log('Service Worker registrado', reg))
-                .catch(err => console.error('Erro ao registrar Service Worker', err));
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/js/service-worker.js')
+                    .then(reg => console.log('Service Worker registrado com sucesso:', reg.scope))
+                    .catch(err => console.error('Erro ao registrar Service Worker:', err));
+            });
         }
     </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93610ad30ad0dd1a',t:'MTc0NTYxNzY4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
