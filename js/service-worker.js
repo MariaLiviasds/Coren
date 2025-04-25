@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coren-pe-v14';
+const CACHE_NAME = 'coren-pe-v17';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -12,19 +12,21 @@ const urlsToCache = [
     '/js/sw-register.js',
     '/img/Coren.webp',
     '/img/servicos.webp',
-    '/img/icons/icon-192x192.webp',
-    '/img/icons/icon-512x512.webp',
     '/img/icons/icon-192x192.png',
     '/img/icons/icon-512x512.png',
+    '/img/icons/icon-192x192.webp',
+    '/img/icons/icon-512x512.webp',
     '/manifest.json',
-    '/offline.html',
-    'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'
+    '/offline.html'
 ];
 
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(urlsToCache))
+            .then(cache => {
+                console.log('Cache aberto');
+                return cache.addAll(urlsToCache);
+            })
     );
 });
 
@@ -36,5 +38,20 @@ self.addEventListener('fetch', event => {
                     return caches.match('/offline.html');
                 });
             })
+    );
+});
+
+self.addEventListener('activate', event => {
+    const cacheWhitelist = [CACHE_NAME];
+    event.waitUntil(
+        caches.keys().then(cacheNames => {
+            return Promise.all(
+                cacheNames.map(cacheName => {
+                    if (!cacheWhitelist.includes(cacheName)) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
     );
 });

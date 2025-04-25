@@ -4,62 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aplicação web do COREN-PE para login e cadastro de profissionais de enfermagem.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.netlify.app; style-src 'self' https://stackpath.bootstrapcdn.com https://fonts.googleapis.com; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdn-cgi/*; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.netlify.app; style-src 'self' https://stackpath.bootstrapcdn.com; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdn-cgi/*; connect-src 'self';">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-    <title>COREN-PE - Conselho Regional de Enfermagem de Pernambuco</title>
+    <title>COREN-PE</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/img/Coren.webp" type="image/webp">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style">
+</head>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="/img/Coren.webp" alt="Coren-PE" width="120" height="40" loading="lazy">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">INSTITUCIONAL</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">SERVIÇOS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">LEGISLAÇÃO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">FISCALIZAÇÃO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">PUBLICAÇÕES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">CONTATO</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <section class="banner-servicos">
-        <div class="container text-center text-white">
-            <h1>Serviços</h1>
-            <p>Acesso online para profissionais de enfermagem</p>
-        </div>
-    </section>
-    <main class="container my-4">
-        <section class="text-center">
-            <h2>Bem-vindo ao COREN-PE</h2>
-            <img src="/img/servicos.webp" alt="Serviços COREN-PE" width="300" height="200" loading="lazy" class="img-fluid mb-3">
-            <p>Explore os serviços oferecidos pelo COREN-PE para profissionais de enfermagem.</p>
-            <a href="/login.html" class="btn btn-primary mr-2">Fazer Login</a>
+    <header class="bg-primary text-white text-center py-3">
+        <img src="/img/Coren.webp" alt="Logo COREN-PE" width="120" height="120" loading="lazy">
+        <h1>Bem-vindo ao COREN-PE</h1>
+    </header>
+    <main class="container my-5">
+        <section>
+            <h2>Serviços</h2>
+            <img src="/img/servicos.webp" alt="Serviços COREN-PE" width="300" height="200" loading="lazy" class="img-fluid">
+            <p>Explore os serviços oferecidos pelo COREN-PE.</p>
+            <a href="/login.html" class="btn btn-primary">Fazer Login</a>
             <a href="/cadastro.html" class="btn btn-secondary">Cadastrar-se</a>
         </section>
     </main>
     <footer class="bg-dark text-white text-center py-3">
         <p>© 2025 COREN-PE. Todos os direitos reservados.</p>
-        <p><a href="mailto:contato@corenpe.org" class="text-white">E-mail: contato@corenpe.org</a></p>
-        <p><a href="tel:+558112345678" class="text-white">Telefone: (81) 1234-5678</a></p>
-        <p><a href="https://maps.google.com/?q=Recife,PE" class="text-white">Endereço: Recife, PE</a></p>
+        <p><a href="/cdn-cgi/l/email-protection#b9dad6d7cdd8cdd6f9dad6cbdcd7c9dc97d6cbde" style="color: #FFFFFF;">E-mail: <span class="__cf_email__" data-cfemail="f99a96978d988d96b99a968b9c97899cd7968b9e">[email&#160;protected]</span></a></p>
+        <p><a href="tel:+558112345678" style="color: #FFFFFF;">Telefone: (81) 1234-5678</a></p>
+        <p><a href="https://maps.google.com/?q=Recife,PE" style="color: #FFFFFF;">Endereço: Recife, PE</a></p>
     </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script defer src="/js/sw-register.js"></script>
-    <script defer src="/cdn-cgi/challenge-platform/scripts/jsd/main.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'935a9b323905ad5e',t:'MTc0NTU1MDE5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
