@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicação web do COREN-PE para login e cadastro de profissionais de enfermagem.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.netlify.app; style-src 'self' https://stackpath.bootstrapcdn.com https://fonts.googleapis.com; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdn-cgi/*; connect-src 'self';">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.netlify.app; style-src 'self' https://stackpath.bootstrapcdn.com; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com; connect-src 'self';">
-    <title>COREN-PE</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>COREN-PE - Conselho Regional de Enfermagem de Pernambuco</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="manifest" href="/manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style">
 </head>
 <body>
     <header class="bg-primary text-white text-center py-3">
         <img src="/img/Coren.webp" alt="Logo COREN-PE" width="120" height="120" loading="lazy">
         <h1>Bem-vindo ao COREN-PE</h1>
     </header>
-    <main class="container my-5">
+    <main class="container my-4">
         <section>
             <h2>Serviços</h2>
             <img src="/img/servicos.webp" alt="Serviços COREN-PE" width="300" height="200" loading="lazy" class="img-fluid">
@@ -34,5 +37,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script defer src="/js/sw-register.js"></script>
+    <script defer src="/cdn-cgi/challenge-platform/scripts/jsd/main.js"></script>
 </body>
 </html>

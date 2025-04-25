@@ -4,40 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página de cadastro do COREN-PE para novos profissionais de enfermagem.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.netlify.app; style-src 'self' https://stackpath.bootstrapcdn.com; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.netlify.app; style-src 'self' https://stackpath.bootstrapcdn.com https://fonts.googleapis.com; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdn-cgi/*; connect-src 'self';">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
     <title>Cadastro - COREN-PE</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="/css/cadastro.css">
     <link rel="manifest" href="/manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style">
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h2 class="text-center mt-5">Cadastro</h2>
-                <form id="cadastro-form">
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Senha</label>
-                        <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
-                </form>
-                <p class="text-center mt-3">Já tem uma conta? <a href="/login.html">Faça login</a></p>
+    <header class="bg-primary text-white text-center py-3">
+        <img src="/img/Coren.webp" alt="Logo COREN-PE" width="120" height="120" loading="lazy">
+        <h1>Cadastro</h1>
+    </header>
+    <main class="container my-4">
+        <form id="cadastro-form" class="col-md-6 mx-auto" aria-labelledby="cadastro-title">
+            <h2 id="cadastro-title" class="text-center mb-4">Cadastro</h2>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required aria-describedby="nome-error">
+                <small id="nome-error" class="form-text text-danger d-none">O nome é obrigatório.</small>
             </div>
-        </div>
-    </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required aria-describedby="email-error">
+                <small id="email-error" class="form-text text-danger d-none">Por favor, insira um e-mail válido.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required aria-describedby="password-error">
+                <small id="password-error" class="form-text text-danger d-none">A senha é obrigatória.</small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        </form>
+        <p class="text-center mt-3">Já tem uma conta? <a href="/login.html">Faça login</a></p>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2025 COREN-PE. Todos os direitos reservados.</p>
+    </footer>
     <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script defer src="/js/cadastro.js"></script>
+    <script defer src="/cdn-cgi/challenge-platform/scripts/jsd/main.js"></script>
 </body>
 </html>
