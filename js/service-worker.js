@@ -1,4 +1,4 @@
-const CACHE_NAME = 'coren-pe-v9';
+const CACHE_NAME = 'coren-pe-v14';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -17,7 +17,8 @@ const urlsToCache = [
     '/img/icons/icon-192x192.png',
     '/img/icons/icon-512x512.png',
     '/manifest.json',
-    '/offline.html'
+    '/offline.html',
+    'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'
 ];
 
 self.addEventListener('install', event => {
