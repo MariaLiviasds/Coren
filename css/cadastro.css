@@ -26,10 +26,15 @@
   color: #004a53;
 }
 
+.nav-link:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 @media (max-width: 992px) {
   .navbar-collapse {
-      background-color: var(--background-color);
-      padding: 1rem;
+    background-color: var(--background-color);
+    padding: 1rem;
   }
 }
 
@@ -52,13 +57,13 @@
 
 @media (max-width: 768px) {
   .banner-servicos {
-      padding: 2rem 0;
+    padding: 2rem 0;
   }
   .banner-servicos h1 {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
   .banner-servicos p {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
@@ -106,6 +111,11 @@
   outline: none;
 }
 
+.form-group .form-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
 .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
@@ -123,27 +133,36 @@
 
 .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 95, 106, 0.5);
+  outline: none;
 }
 
 #mensagem {
   text-align: center;
-  color: var(--text-color);
+  font-size: 1rem;
+}
+
+#mensagem.text-success {
+  color: #28a745;
+}
+
+#mensagem.text-danger {
+  color: #dc3545;
 }
 
 @media (max-width: 576px) {
   .cadastro-section {
-      padding: 2rem 0;
+    padding: 2rem 0;
   }
   #cadastroForm {
-      padding: 1.5rem;
+    padding: 1.5rem;
   }
   .cadastro-section h2 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
   .form-group input {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
   .btn-primary {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 }

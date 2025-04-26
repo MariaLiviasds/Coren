@@ -1,14 +1,21 @@
-const CACHE_NAME = 'coren-pe-cache-v1';
+const CACHE_NAME = 'coren-pe-cache-v3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/css/styles.css',
   '/css/login.css',
   '/css/cadastro.css',
+  '/css/offline.css',
+  '/js/cadastro.js',
+  '/js/login.js',
   '/img/icons/icon-192x192.webp',
   '/img/icons/icon-512x512.webp',
+  '/img/banner-cadastro.webp',
+  '/img/banner-login.webp',
+  '/img/Coren.webp',
   '/login.html',
   '/cadastro.html',
+  '/offline.html',
   '/js/service-worker.js',
   '/manifest.json',
   'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
@@ -21,6 +28,8 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(STATIC_ASSETS);
+    }).catch(err => {
+      console.error('Erro ao cachear recursos:', err);
     })
   );
 });
@@ -40,8 +49,11 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      return response || fetch(event.request).catch(() => {
-        return caches.match('/index.html'); // Fallback para offline
+      if (response) {
+        return response;
+      }
+      return fetch(event.request).catch(() => {
+        return caches.match('/offline.html'); // Fallback para offline
       });
     })
   );

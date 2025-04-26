@@ -1,12 +1,22 @@
 {
     "name": "COREN-PE",
     "short_name": "COREN-PE",
+    "description": "Plataforma do COREN-PE para serviços de enfermagem",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#f8f9fa",
     "theme_color": "#005F6A",
     "icons": [
-      { "src": "/img/icons/icon-192x192.webp", "sizes": "192x192", "type": "image/webp" },
-      { "src": "/img/icons/icon-512x512.webp", "sizes": "512x512", "type": "image/webp" }
-    ]
+      {
+        "src": "/img/icons/icon-192x192.webp",
+        "sizes": "192x192",
+        "type": "image/webp"
+      },
+      {
+        "src": "/img/icons/icon-512x512.webp",
+        "sizes": "512x512",
+        "type": "image/webp"
+      }
+    ],
+    "scope": "/"
   }

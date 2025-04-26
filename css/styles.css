@@ -21,14 +21,14 @@ body {
 }
 
 main h2 {
-  color: #003366;
+  color: #004080;
   font-weight: bold;
   font-size: 1.8rem;
-  text-align: center; /* Centraliza o título */
+  text-align: center;
 }
 
 main section {
-  text-align: center; /* Centraliza todo o conteúdo da section */
+  text-align: center;
 }
 
 main section p {
@@ -42,15 +42,15 @@ main section p {
   border: none;
   font-weight: 600;
   font-size: 1.1rem;
-  display: block; /* Faz o botão ocupar a linha inteira */
-  margin: 0.5rem auto; /* Centraliza horizontalmente e adiciona margem vertical */
+  display: block;
+  margin: 0.5rem auto;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
-  max-width: 300px; /* Limita a largura do botão */
+  max-width: 300px;
 }
 
 .btn-primary:hover {
-  background-color: #007ef4;
+  background-color: #004a53;
 }
 
 .btn-primary:focus {
@@ -63,11 +63,11 @@ main section p {
   border: none;
   font-weight: 600;
   font-size: 1.1rem;
-  display: block; /* Faz o botão ocupar a linha inteira */
-  margin: 0.5rem auto; /* Centraliza horizontalmente e adiciona margem vertical */
+  display: block;
+  margin: 0.5rem auto;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
-  max-width: 300px; /* Limita a largura do botão */
+  max-width: 300px;
 }
 
 .btn-secondary:hover {
@@ -81,9 +81,26 @@ main section p {
 
 .button-container {
   display: flex;
-  flex-direction: column; /* Empilha os botões verticalmente */
-  align-items: center; /* Centraliza os botões horizontalmente */
-  gap: 1rem; /* Espaçamento entre os botões */
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand img {
+  max-width: 200px;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #005F6A;
 }
 
 @media (max-width: 576px) {
@@ -96,6 +113,9 @@ main section p {
   .btn {
       font-size: 0.9rem;
       padding: 0.5rem 1rem;
-      max-width: 250px; /* Reduz a largura em telas pequenas */
+      max-width: 250px;
+  }
+  .navbar-brand img {
+      max-width: 150px;
   }
 }
