@@ -1,1 +1,70 @@
-document.getElementById("cadastroForm").addEventListener("submit",(function(e){e.preventDefault();const t=document.getElementById("nome").value.trim(),n=document.getElementById("email").value.trim(),r=document.getElementById("cpf").value.trim(),a=document.getElementById("senha").value,d=document.getElementById("confirmarSenha").value,l=document.getElementById("mensagem");if(l.innerHTML="",t.length<3)return void(l.innerHTML='<div class="alert alert-danger">Nome deve ter pelo menos 3 caracteres.</div>');if(!n.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))return void(l.innerHTML='<div class="alert alert-danger">E-mail inválido.</div>');const i=r.replace(/\D/g,"");if(11!==i.length||!function(e){let t,n=0;if("00000000000"===e)return!1;for(let t=1;t<=9;t++)n+=parseInt(e.substring(t-1,t))*(11-t);t=10*n%11,(10===t||11===t)&&(t=0);if(t!==parseInt(e.substring(9,10)))return!1;n=0;for(let t=1;t<=10;t++)n+=parseInt(e.substring(t-1,t))*(12-t);t=10*n%11,(10===t||11===t)&&(t=0);return t===parseInt(e.substring(10,11))}(i))return void(l.innerHTML='<div class="alert alert-danger">CPF inválido.</div>');if(a.length<6)return void(l.innerHTML='<div class="alert alert-danger">Senha deve ter pelo menos 6 caracteres.</div>');if(a!==d)return void(l.innerHTML='<div class="alert alert-danger">As senhas não coincidem.</div>');l.innerHTML='<div class="alert alert-success">Cadastro realizado com sucesso!</div>';const s={nome:t,email:n,cpf:i,senha:a};console.log("Dados enviados:",s),document.getElementById("cadastroForm").reset()})),document.getElementById("cpf").addEventListener("input",(function(e){let t=e.target.value.replace(/\D/g,"");t.length>11&&(t=t.slice(0,11)),t=t.replace(/(\d{3})(\d)/,"$1.$2"),t=t.replace(/(\d{3})\.(\d{3})(\d)/,"$1.$2.$3"),t=t.replace(/(\d{3})\.(\d{3})\.(\d{3})(\d)/,"$1.$2.$3-$4"),e.target.value=t}));
+document.addEventListener('DOMContentLoaded', () => {
+  carregarStatus();
+  document.getElementById('cadastroForm').addEventListener('submit', realizarCadastro);
+});
+
+async function carregarStatus() {
+  try {
+      const response = await fetch('http://localhost:3000/api/status');
+      const data = await response.json();
+      const mensagemDiv = document.getElementById('mensagem');
+      mensagemDiv.textContent = `${data.mensagem} (Atualizado em: ${data.ultimaAtualizacao})`;
+      mensagemDiv.className = 'alert alert-info';
+      mensagemDiv.style.display = 'block';
+  } catch (error) {
+      console.error('Erro ao carregar status:', error);
+      mostrarMensagem('Erro ao carregar status do sistema', 'alert alert-danger');
+  }
+}
+
+async function realizarCadastro(event) {
+  event.preventDefault();
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const cpf = document.getElementById('cpf').value;
+  const senha = document.getElementById('senha').value;
+  const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+  // Validação no front-end
+  if (!nome || !email || !cpf || !senha || !confirmarSenha) {
+      mostrarMensagem('Por favor, preencha todos os campos', 'alert alert-danger');
+      return;
+  }
+
+  if (senha !== confirmarSenha) {
+      mostrarMensagem('As senhas não coincidem', 'alert alert-danger');
+      return;
+  }
+
+  try {
+      const response = await fetch('http://localhost:3000/api/cadastro', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ nome, email, cpf, senha })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+          mostrarMensagem(data.mensagem, 'alert alert-success');
+          document.getElementById('cadastroForm').reset();
+      } else {
+          mostrarMensagem(data.erro, 'alert alert-danger');
+      }
+  } catch (error) {
+      console.error('Erro ao realizar cadastro:', error);
+      mostrarMensagem('Erro ao conectar com o servidor', 'alert alert-danger');
+  }
+}
+
+function mostrarMensagem(texto, classe) {
+  const mensagemDiv = document.getElementById('mensagem');
+  mensagemDiv.textContent = texto;
+  mensagemDiv.className = classe;
+  mensagemDiv.style.display = 'block';
+  setTimeout(() => {
+      mensagemDiv.style.display = 'none';
+  }, 5000);
+}
